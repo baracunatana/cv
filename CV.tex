@@ -1,6 +1,8 @@
 \documentclass[10pt]{article}
 \usepackage{charter}
 \usepackage{fullpage}
+\usepackage{doi}
+\usepackage[numbers]{natbib}
 \usepackage{color,hyperref}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.5}
 \hypersetup{colorlinks,breaklinks,
@@ -50,12 +52,12 @@
 
 \begin{document}
 % \selectlanguage{spanish}
-\bibliographystyle{unsrt}
-\bibliographystyleint{ieeetr}
-\bibliographystylejou{ieeetr}
-\bibliographystyleinv{ieeetr}
-\bibliographystylebok{ieeetr}
-\bibliographystylewor{ieeetr}
+\bibliographystyle{ieeetr}
+\bibliographystyleint{unsrtnat}
+\bibliographystylejou{unsrtnat}
+\bibliographystyleinv{unsrtnat}
+\bibliographystylebok{unsrtnat}
+\bibliographystylewor{unsrtnat}
 
 \newcommand{\idiom}[2]{\ifthenelse{\boolean{esp}}{#1}{#2}}
 \newcommand{\uniandes}{Universidad de los Andes}
