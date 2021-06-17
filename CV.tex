@@ -1,0 +1,408 @@
+\documentclass[10pt]{article}
+\usepackage{charter}
+\usepackage{fullpage}
+\usepackage{color,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.5}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+\usepackage{ifthen}
+\usepackage[resetlabels]{multibib}
+\usepackage[ManyBibs]{currvita}
+%\usepackage[english,spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+
+%\input{flags}
+\newboolean{esp}
+\setboolean{esp}{true}
+\newboolean{doResearchInterests}
+\setboolean{doResearchInterests}{false}
+\newboolean{doProyectosCortos}
+\setboolean{doProyectosCortos}{false}
+\newboolean{doOtrosIntereses}
+\setboolean{doOtrosIntereses}{false}
+\newboolean{doCursos}
+\setboolean{doCursos}{false}
+
+\newcites{int}{foo}
+\newcites{jou}{foo}
+\newcites{inv}{foo}
+\newcites{bok}{foo}
+
+% Better for lists with 1-2 items and short descriptions
+\newenvironment{sublist}{%
+  \begin{list}{}{
+      \setlength{\itemsep}{0em}\setlength{\parsep}{0em}
+      \setlength{\topsep}{0em}\setlength{\parskip}{0em}
+    }
+  }%
+  { \end{list} }
+
+% Better for lists with more than 2 items and/or long descriptions
+\newenvironment{subbulletlist}{%
+  \begin{list}{\labelitemii}{%
+      \setlength{\topsep}{\itemsep}\setlength{\parskip}{\parsep}%
+    }%
+  }%
+  { \end{list} }
+
+\begin{document}
+% \selectlanguage{spanish}
+\bibliographystyle{unsrt}
+\bibliographystyleint{ieeetr}
+\bibliographystylejou{ieeetr}
+\bibliographystyleinv{ieeetr}
+\bibliographystylebok{ieeetr}
+
+\newcommand{\idiom}[2]{\ifthenelse{\boolean{esp}}{#1}{#2}}
+\newcommand{\uniandes}{Universidad de los Andes}
+\newcommand{\isis}{\idiom{Ingeniería de Sistemas y Computación}{Systems and Computing Engineering}}
+\newcommand{\isist}{\idiom{Ingeniería de Sistemas}{Systems Engineering}}
+\newlength{\oldcvlabelwidth}
+\renewcommand*{\cvbibname}{}
+
+\begin{cv}{Juan Erasmo Gómez\\{\large \itshape Curriculum Vitae}}
+  
+  %% 
+  %% Información de contacto
+  %% 
+  \begin{cvlist}{\idiom{Contacto}{Contact}}
+  \item \idiom{Dirección}{Address}: Calle 40 \# 5-50. Ed. José Gabriel Maldonado. Bogotá, Colombia.\\
+    \idiom{Teléfono}{Phone}: +571 3208320 ext 5400 \\
+    \href{mailto:je.gomezm@javeriana.edu.co}{je.gomezm@javeriana.edu.co}
+  \end{cvlist}
+  
+  \begin{cvlist}{\idiom{Educación}{Education}}
+  \item \emph{Ph.D., Development Policy and Management}, \idiom{Diciembre}{December} 2016\\
+    Centre for Development Informatics\\
+    University of Manchester\\
+    \idiom{Mánchester, Reino Unido}{Manchester, UK}
+    \begin{sublist}
+    \item \idiom{Tesis}{Thesis}: \textit{Digital innovation and ICT adoption in microenterprises: A multi-level perspective on digital transitions in Colombian microenterprises} \idiom{(Resumen de tesis en apéndices)}{(Thesis abstract provided as appendix)}
+    \item \idiom{Supervisores}{Supervisors}: \href{http://www.manchester.ac.uk/research/richard.duncombe/}{Richard Duncombe, Ph.D.}, \href{http://www.manchester.ac.uk/research/richard.heeks}{Richard Heeks, Ph.D.}
+    \item \idiom{Examinadores}{Examiners}: \href{http://dpp.open.ac.uk/people/dinar-kale}{Dinar Kale, Ph.D.}, \href{http://www.manchester.ac.uk/research/ronnie.ramlogan/}{Ronald Ramlogan, Ph.D.} \\
+    \end{sublist}
+    
+  \item \emph{M.Sc., \isis}, \idiom{Marzo}{March} 2009\\ 
+    \uniandes\\
+    Bogotá, Colombia
+    \begin{sublist}
+    \item \idiom{Tesis}{Thesis}: \textit{\idiom{Estudio y propuesta de adaptación del modelo de negocios de Software as a Service para satisfacer las necesidades del sector MiPyme colombiano}{Study and customization proposal of the Software as a Service business model to satisfy the needs of Colombian SMB sector}}
+    \item \idiom{Asesor}{Advisor}: \href{http://sistemas.uniandes.edu.co/~ogiraldo}{Prof. Olga Lucía Giraldo}
+    \item \idiom{Calificación}{Grade}: 5/5 \\
+    \end{sublist}
+  \item \emph{B.Sc., \isis}, \idiom{Marzo}{March} 2007\\
+    \uniandes\\
+    Bogotá, Colombia
+    \begin{sublist}
+    \item \idiom{Proyecto de Grado}{Graduation Project}: \textit{\idiom{Generación de interfaces gráficas basadas en descriptores XML}{Graphical interfaces generation based on XML descriptors}}
+    \item \idiom{Asesor}{Advisor}: \href{http://sistemas.uniandes.edu.co/~cjimenez}{Prof. Claudia Jiménez, Ph.D.}
+    \item \idiom{Calificación}{Grade}: 5/5 \\
+    \end{sublist}
+  \end{cvlist}
+  
+  %% 
+  %% Formación complementaria
+  %% 
+  \begin{cvlist}{\idiom{Formación complementaria}{Short courses}}
+  \item[2018] \emph{\idiom{Consultoría desde la educación}{Consulting services from education}}\\
+    Pontificia Universidad Javeriana\\
+    Bogotá, Colombia
+  \item[2018] \emph{TOGAF Foundations + Applying Enterprise Architecture Using TOGAF v9.1}\\
+    IT Institute\\
+    Bogotá, Colombia
+  \item[2011] \emph{\idiom{Módulo de Incorporación de la escritura académica en la enseñanza y el aprendizaje}{Module: Inclusion of academic writing in teaching and learning}}\\
+    \uniandes\\
+    Bogotá, Colombia
+  \item[2010] \emph{Workshop: Writing prefessional papers}\\
+    \uniandes\\
+    Bogotá, Colombia
+  \end{cvlist}
+  
+  
+  %% 
+  %% Experiencia docente
+  %% 
+  \begin{cvlist}{\idiom{Experiencia Docente}{Teaching Experience}}
+  \item[2018 - ] \textit{\idiom{Profesor asistente }{Assistant professor}}\\
+    \idiom{Facultad de Ingeniería}{Engineering School}\\
+    \idiom{Departamento de}{} \isist \idiom{}{ Department}\\
+    Pontificia Universidad Javeriana\\
+    Bogotá, Colombia
+    \ifthenelse{\boolean{doCursos}}{
+      \begin{subbulletlist}
+      \item \idiom{Sistemas de Información}{Information Systems}
+      \item \idiom{Pensamiento Sistémico}{Systemic Thinking}
+      \item \idiom{Arquitectura Empresarial}{Enterprise Architecture}
+      \end{subbulletlist}}{}
+
+  \item[2017 - ] \textit{MSc dissertation supervisor}\\
+    Centre for Development Informatics\\
+    School of Environment, Education and Development\\
+    University of Manchester\\
+    \idiom{Mánchester, Reino Unido}{Manchester, UK}
+    \ifthenelse{\boolean{doCursos}}{
+      \begin{subbulletlist}
+      \item \idiom{Asesor de tesis de maestría}{Supervisor of master dissertations}
+      \end{subbulletlist}}{}
+    
+  \item[2017 - 2017] \textit{\idiom{Profesor de cátedra}{Part time faculty}}\\
+    \idiom{Facultad de Ingeniería}{Engineering School}\\
+    \idiom{Departamento de}{} \isis \idiom{}{ Department}\\
+    \uniandes\\
+    Bogotá, Colombia
+    \ifthenelse{\boolean{doCursos}}{
+      \begin{subbulletlist}
+      \item ISIS-1204: \idiom{Algorítmica y Programación Orientada por Objetos}{Algorithmics and Object Oriented Programing} I [\href{http://cupi2.uniandes.edu.co/sitio/index.php/cursos/apo1}{\idiom{Sitio web del curso}{Course website}}]
+      \item ISIS-1404: \idiom{TI en las Organizaciones}{IT in Organizations} [\href{http://sistemas.uniandes.edu.co/~isis1404}{\idiom{Sitio web del curso}{Course website}}].
+      \end{subbulletlist}}{}
+
+    \item[2014 - 2016] \textit{Teaching Assistant}\\
+      Global Development Institute\\
+      School of Environment, Education and Development\\
+      University of Manchester\\
+      \idiom{Mánchester, Reino Unido}{Manchester, UK}
+      \ifthenelse{\boolean{doCursos}}{
+        \begin{subbulletlist}
+        \item \idiom{Asesor de cuatro tesis de maestría}{Supervisor of four master dissertations}
+        \item \idiom{Desarrollador de los sitios web BlackBoard de los programas de maestr\'{i}a a distancia del Global Development Institute}{Developer of the distance learning BlackBoard sites for the distance learning master courses of the Global Development Institute} 
+        \item \idiom{Miembre del comité organizador de la Conferencia SEED PGR de 2015}{Member of the organizing committee of the SEED PGR 2015 conference}.
+        \end{subbulletlist}}{}
+
+  \item[2009 - 2011] \textit{Instructor \idiom{}{(Junior faculty)}}\\
+    \idiom{Facultad de Ingeniería}{Engineering School}\\
+    \idiom{Departamento de}{} \isis \idiom{}{ Department}\\
+    \uniandes\\
+    Bogotá, Colombia
+    \ifthenelse{\boolean{doCursos}}{
+      \begin{subbulletlist}
+      \item ISIS-1204: \idiom{Algorítmica y Programación Orientada por Objetos}{Algorithmics and Object Oriented Programing} I [\href{http://cupi2.uniandes.edu.co/sitio/index.php/cursos/apo1}{\idiom{Sitio web del curso}{Course website}}]
+      \item ISIS-1205: \idiom{Algorítmica y Programación Orientada por Objetos}{Algorithmics and Object Oriented Programing} II [\href{http://cupi2.uniandes.edu.co/sitio/index.php/cursos/apo2}{\idiom{Sitio web del curso}{Cuorse website}}]
+      \item ISIS-3613: \idiom{Diseño Organizacional con TICs}{Organizational Design with ICTs}.
+      \item ISIS-1603B: \idiom{Las Mil Caras de Internet}{The Thousand Faces of the Internet} [\href{http://sistemas.uniandes.edu.co/~isis1603b}{\idiom{Sitio web del curso}{Course website}}]
+      \item ISIS-1404: \idiom{TI en las Organizaciones}{IT in Organizations} [\href{http://sistemas.uniandes.edu.co/~isis1404}{\idiom{Sitio web del curso}{Course website}}].
+      \item \idiom{Asesor de 10 proyectos de grado de estudiantes de pregrado}{Supervisor of 10 graduation proyects of undergrad students}.
+      \item \idiom{Co-asesor de dos tesis de maestr\'{i}a}{Co-supervisor of two master theses}. 
+      \end{subbulletlist}}{}
+
+  \item[2007 - 2009] \textit{\idiom{Profesor de cátedra}{Part time faculty}}\\
+    \idiom{Facultad de Ingeniería}{Engineering School}\\
+    \idiom{Departamento de}{} \isis \idiom{}{ Department}\\
+    \uniandes\\
+    Bogotá, Colombia
+    \ifthenelse{\boolean{doCursos}}{
+      \begin{subbulletlist}
+      \item ISIS-1204: \idiom{Algorítmica y Programación Orientada por Objetos}{Algorithmics and Object Oriented Programing} I [\href{http://cupi2.uniandes.edu.co/sitio/index.php/cursos/apo1}{\idiom{Sitio web del curso}{Course website}}]
+      \item ISIS-1205: \idiom{Algorítmica y Programación Orientada por Objetos}{Algorithmics and Object Oriented Programing} II [\href{http://cupi2.uniandes.edu.co/sitio/index.php/cursos/apo2}{\idiom{Sitio web del curso}{Course website}}]
+      \end{subbulletlist}}{}
+    \end{cvlist}
+
+  %% 
+  %% Experiencia como investigador
+  %% 
+  \begin{cvlist}{\idiom{Otras experiencias relevantes}{Research and professional experience}}
+  \item \textbf{\idiom{Revisor académico externo}{Academic reviewer}}
+    \begin{subbulletlist}
+    \item \href{https://2019ifipwg94.net/}{The 15th International Conference on Social Implications of Computers in Developing Countries}
+    \item \href{http://paradigma.uniandes.edu.co/}{Revista Paradigma.}
+    \item \href{http://www.unicauca.edu.co/editorial/}{Editorial Universidad del Cauca.}
+    \end{subbulletlist}
+  \item \textbf{\idiom{Experiencia como investigador}{Research groups affiliation}}
+
+  \item[2018 - ] \textit{\idiom{Grupo de investigación}{} \href{https://sophia.javeriana.edu.co/istar/}{ISTAR} \idiom{}{research group}}\\
+    \idiom{Miembro activo del grupo de investigación ISTAR de la Pontifica Universidad Javeriana. Director encargado del grupo entre agosto de 2018 y septiembre de 2019.}{Active member of the ISTAR research group of the Pontificia Universidad Javeriana. Deputy director of the group between August 2018 and September 2019.}
+    
+  \item[2012 - 2016] \textit{\href{http://www.cdi.manchester.ac.uk/}{Centre for Development Informatics (CDI)}}\\
+    \idiom{Hice parte del CDI en caracter de investigador doctoral durante el desarrollo de mi doctorado. Durante mi estancia en este grupo participé en la organización del grupo de lectura del CDI y otros eventos públicos del grupo.}
+    {I was part of the CDI as a doctoral researchers during my PhD studies. During this period, I participated in the organization of the CDI reading group and other public events of the group.}
+
+  \item[2010 - 2011] \textit{\idiom{Grupo de investigación}{} \href{http://ticsw.uniandes.edu.co}{TICSw} \idiom{}{research group}}\\
+      \idiom{Hice parte del grupo de investigación TICSw de la Facultad de Ingeniería de la Universidad de los Andes, enfocándome en las líneas de Negocios y TI, y Educación en TI}
+      {Former member of the TICSw research group in the Engineering School of the University of the Andes. My work was focus on the Business and IT, and IT education research lines}
+
+%%
+%% Otra experiencia
+%%
+       \ifthenelse{\boolean{doProyectosCortos}}{
+    \item \textbf{\idiom{Proyectos Cortos}{Research assistant expirience}}
+      \begin{subbulletlist}
+      \item \textit{\idiom{Proyecto}{} \href{http://cupi2.uniandes.edu.co}{Cupi2} \idiom{}{project}}\\
+        \idiom{Trabajé 1 año en el proyecto Cupi2 de la Universidad de los Andes. Mis
+          responsabilidades en el proyecto incluían liderar el equipo encargado
+          de diseñar, implementar y probar el material docente a utilizar en los
+          cursos de programación orientada por objetos de la universidad}{I worked for a year in the Cupi2 project at the University of the Andes. My responsibilities within the project included leading the team in charge of the design, development and testing of the teaching material for the object oriented programing courses of the university}.\\
+        \idiom{También fui el encargado del proyecto}{I was also in charge of the} Cupi2 Collections \idiom{}{project}.
+      \item \textit{\href{http://cec.uniandes.edu.co}{\idiom{Centro de Competitividad y Estrategia}{Competitiveness and Strategy Center}}}\\
+        \idiom{Trabajé 2 meses apoyando el diseño del plan estratégico de TI para uno de los clientes
+          del Centro de Competitividad y Estrategia de la Facultad de Administración de Empresas
+          de la Universidad de los Andes}{I work 2 months supporting the design of the strategic plan of IT for one of the clients of the Competitiveness and Strategy Center of the Business School of the University of the Andes}.
+      \item \textit{\idiom{Departamento de Antropología}{Anthropology Department}}\\
+        \idiom{Apoyé al Departamento de Antropología en la actualización tecnológica de un sistema
+          de información acerca de lenguas aborigenes}{I supported the Anthropology Department of the University of the Andes in the modernization of an information system about aboriginal languages}.
+      \item \textit{\idiom{Proyecto}{} Genesis \idiom{}{Project}}\\
+        \idiom{Trabajé 6 meses en el diseño e implementación de un generador de sistemas de información
+          CRUD}{I worked 6 month in the design and implementation of an automatic generator of CRUD information systems}.
+      \item \textit{\idiom{Proyecto Pequeños Científicos}{Pequeños Científicos Project}}\\
+        \idiom{Realicé el levantamiento de requerimientos y opoyé el proceso de contratación del sistema de información IndagaLA}{I worked as a Requirement Engineer for the IndagaLA information system}.
+      \end{subbulletlist}}{}
+    \end{cvlist}
+    
+    \ifthenelse{\boolean{doResearchInterests}}{
+      \begin{cvlist}{\idiom{Áreas de Interés}{Research Interests}}
+      \item \textbf{\idiom{Desarrollo socio-económico basado en TICs (ICT4D)}{Information and communication technologies for development (ICT4D)}} \\
+        \idiom{Dadas las condiciones socio-económicas de Colombia, y el gran potencial que represetan las TICs, estoy enfocado en investigar los impactos de las tecnologías de información en el desarrollo socio-económico del país y la región. En particular, me interesan los efectos (positivos o negativos) de las TICs en sectores productivos vulnerables como las micro empresas o los negocios informales, y las acciones que actores oficiales o privados deben tomar para facilitar la transición de estos negocios a la era digital}{Given the socio-economical conditions in Colombia, and the great potential of ICTs, I'm focused on research around the impacts of ICTs over the socio-economical development of the country and the region. In particular, I'm interested the impacts of TIC over vulnerable productive sectors like micro enterprises and informal business, and on the public policy or private efforts needed to facilitate the transition of these business into the digital era}.
+        
+      \item \textbf{\idiom{Procesos de innovación inclusiva}{Inclusive innovation processes}}\\
+        \idiom{Como una continuación natural de mi tesis doctoral, estoy interesado en conceptualizar elementos como inclusión, exclusión, y justicia en procesos de innovación. En particular, estoy interesado en explorar estos temas en procesos de innovación digital en América Latina}{As a natural continuation of my Ph.D. research, I'm interested in the conceptualization of elements like inclusion, exclusion, and justice in innovation processes. In particular, I'm interested in exploring these issues in digital innovation processes in Latinamerica}.
+        
+      \item \textbf{\idiom{Gobierno electrónico}{E-Government}}\\
+        \idiom{Estoy interesado en investigación en torno a las aplicaciones de TIC desde todos los niveles del gobierno. En particular, estoy interesado en investigar la utilización de tecnologías Big Data para desarrollo socio-económico y en la entrega de servicios públicos a través de canales digitales}{I'm interested in research the application of ICTs for public purposes at all levels. In particular, I'm interested in researching the utilization of Big Data technologies for socio-economic development and the provision of public service through digital channels}.\\
+        \idiom{Adicionalmente, estoy interesado en la formulación de política pública TIC tendiente a la difusión de TICs en microempresas}{Additionally, I'm interest in the formulation of ICT public policy}.
+        
+      \end{cvlist}}{}
+    
+    %% 
+  %% Otros intereses
+  %%
+   \ifthenelse{\boolean{doResearchInterests}}{
+  \begin{cvlist}{\idiom{Otros intereses}{Other interests}}
+  \item \textbf{\idiom{Desarrollo de software libre}{Open source software development}}\\
+    \idiom{Desarrollador principal del proyecto de software libre pmTrans. pmTrans es una aplicación multiplataforma para la transcripcion de entrevistas}{Main developer and maintener of the open source project pmTrans. pmTrans is a multi-platform application for the transcription of audio interviews}.\\
+    \href{https://github.com/juanerasmoe/pmTrans}{https://github.com/juanerasmoe/pmTrans}
+  \end{cvlist}
+  }{}
+
+  %% 
+  %% Referencias
+  %% 
+  \begin{cvlist}{\idiom{Referencias}{References}}
+  \item \textbf{Dr Efrain Ortíz}\\
+    \idiom{Departamento de}{} Ingeniería de Sistemas \idiom{}{Department}\\
+    \idiom{Facultad de Ingeniería}{Engineering School}\\
+    Pontificia Universidad Javeriana\\
+    Bogotá, Colombia\\
+    Email: efrain.ortiz@javeriana.edu.co\\
+    \idiom{Teléfono}{Phone}: +57 3208320 ext 5312
+    
+  \item \textbf{Professor Richard Heeks (Ph.D. Supervisor)}\\
+    Centre for Development Informatics\\
+    Global Development Institute\\
+    School of Environment, Education and Development\\
+    University of Manchester\\
+    Oxford Road. M13 9PL.\\
+    Manchester, UK.\\
+    Email: richard.heeks@manchester.ac.uk
+    
+  \item \textbf{Dr Jorge Villalobos}\\
+    \idiom{Departamento de}{} Ingeniería de Sistemas y Computación \idiom{}{Department}\\
+    \idiom{Facultad de Ingeniería}{Engineering School}\\
+    \uniandes\\
+    Bogotá, Colombia\\
+    Email: jvillalo@uniandes.edu.co\\
+    \idiom{Teléfono}{Phone}: +57 3394949 ext 3052
+  \end{cvlist}
+
+  %% 
+  %% Premios
+  %% 
+  \begin{cvlist}{\idiom{Premios, becas, y subvensiones}{Awards, Fellowships, and Grants}}
+  \item \idiom{Beca Colciencias. Crédito condonable para doctorado en el exterior (convocatoria 568 de 2012)}{Colciencias scholarship. Condonalbe loan for PhD studies abroad (Call 568 of 2012)}.
+  \end{cvlist}
+  
+  \begin{cvlist}{\idiom{Estudiantes dirigidos}{Students}}
+  \item \textbf{\idiom{Estudiantes de Maestría}{MSc Students}}
+    \begin{subbulletlist}
+    \item Lyndalin Emekwa ``SaaS as a Business Model: An Analysis of the migration from offering on-premise software solutions to cloud-based software solutions by Sage Group UK'', University of Manchester, UK., 2020.
+    \item Tenesha Hutchison ``Towards One Patient One Record Health Information System in Saint Lucia: Challenges to Sustainability and Scalability'', University of Manchester, UK., 2020.
+    \item Esteban Villafrades ``Evaluación de impacto de herramientas digitales de aprendizaje: el caso de SPAL web'', Pontificia Universidad Javeriana, Bogotá, Colombia, 2019.
+    \item Sumaya Mulumba ``Effect of tablet PCs on the motivtion and performance of social workers: A study of the sustainable outcomes for children and youth (SOCY) project in Rakai and Wakiso districts, Uganda'', University of Manchester, UK., 2019.
+    \item Linda Winkler ``Culture meets agility: How culture traits may influence the adaptation of agile methodologies'', University of Manchester, UK., 2019.
+    \item Paul Strunz ``Robotic Process Automation: Critial success fatros - an organizational-fit perspective'', University of Manchester, UK., 2019.
+    \item Liam Murphy ``The influence of national culture on the success or failure of multi-national information systems projects: A contribution to the literature from a UK perspective'', University of Manchester, UK., 2019.  
+    \item Dilafruz Mammadova, ``E-Governmnet in the wider context of change in developing countries: The case of Azerbaijan'', University of Manchester, UK., 2018.
+    \item Livingston Nduja, ``Investigating the use of mobile phone call \& SMS reminders in enhancing adherence to HIV treatment regimens in mobile fishing communities: A case of Kalangala District, Uganda''. University of Manchester, Manchester, UK., 2017.
+    \item Fernando Oramas, ``Framework para la identificación de Killer APPs en sectores estratégicos colombianos''. Universidad de los Andes, Bogotá, Colombia, 2012.
+    \item César Felipe Cruz, ``Juego de simulación de modelos operativos como apoyo pedagógico a cursos de sistemas de información''. Universidad de los Andes, Bogotá, Colombia, 2010.
+    \end{subbulletlist}
+  \item \textbf{\idiom{Estudiantes de Pregrado}{Undergrad Students}}
+    \begin{subbulletlist}
+    \item Andrés Alberto Gomes, Felipe Jiménez, Ana Cristina Macià, Camilo Andrés Mogollón, \idiom{y}{and} Juan Pablo Suárez, ``Sistema para la empresa Cristales Templado La Torre''. Pontificia Universidad Javeriana, Bogotá, Colombia. 2018.
+    \item Diego Felipe Velasco, ``Comercio electrónico en MIPYMES colombianas''. Universidad de los Andes, Bogotá, Colombia, 2011.
+    \item José Alejandro Rodrígue, ``Diagnostico de TICs en Pymes colombiana''. Universidad de los Andes, Bogotá, Colombia, 2011.
+    \item Francisco José Murcia, ``Apropiación de tecnologías de información y comunicación en Pymes''. Universidad de los Andes, Bogotá, Colombia, 2011.
+    \item Nicolás Javier Bermejo, ``Filtro para apropiacion de tecnologías de la información en Pymes''. Universidad de los Andes, Bogotá, Colombia, 2011.  
+    \item  Laura Marcela Sánchez, ``Apropiación de tecnologías de la información y comunicación (TIC's) en PYMES''. Universidad de los Andes, Bogotá, Colombia, 2010.
+    \item  Laura Carolina Reyes, ``Uso del Business Motivation Model en Pymes colombianas''. Universidad de los Andes, Bogotá, Colombia, 2010.
+    \item  Julián David Moreno, Fernando Andrés Oramas, y Manuel Alejandro Murcia, `` Apropiación de tecnologías de información en Pymes''. Universidad de los Andes, Bogotá, Colombia, 2010.
+    \item Sergio Almanza Velásquez, ``Riesgos y beneficios del modelo software as a service (SaaS) y la percepción de estos por parte de las MiPymes jóvenes colombianas''. Universidad de los Andes, Bogotá, Colombia, 2009.
+      \item  William Camilo Bernal, ``Arquitectura empresarial y gobierno de TI en Cafam''. Universidad de los Andes, Bogotá, Colombia, 2009.
+    \item Javier Aníbal Cruz Cárdenas, ``Apropiación de tecnologías de información en maquila de confecciones''. Universidad de los Andes, Bogotá, Colombia, 2009.
+    \end{subbulletlist}
+  \end{cvlist}
+
+  \begin{cvlist}{\idiom{Certificaciones}{Certifications}}
+    \item TOGAF 9 Certified
+  \end{cvlist}
+    
+  \setlength{\oldcvlabelwidth}{\cvlabelwidth}
+  \setlength{\cvlabelwidth}{1em}
+  \renewcommand*{\bibindent}{1.5em}
+  % Do bibaddtoleftmargin instead of biblabelsep if you're
+  % not using manybib or openbib
+  % \renewcommand*{\bibaddtoleftmargin}{1.5em}
+  \newcommand*{\biblabelsep}{1.5em}
+  \begin{cvlist}{\idiom{Publicaciones}{Publications}}
+  \item \textbf{\idiom{Revistas académicas y journals arbitrados}{Peer-reviewed journals}}
+    \nocitejou{Arenas2020, ZEUSS, GENESIS, Arenas2020, Heeks2021, Gomez-Morantes2021, RamosMarroquin2021}
+    \bibliographyjou{jou}
+
+  \item \textbf{\idiom{Capítulos de libro}{Book Chapters}}
+    \nocitebok{IFIP, GobTIOC, CENTERIS}
+    \bibliographybok{bok}
+    
+  \item \textbf{\idiom{Congresos y conferencias internacionales arbitradas}{Peer-reviewed international conferences}}
+    \nociteint{REALTEETH, WEBIST, GobTIO, CSEDU, CONFIRM, CONTECSI,XML}
+    \bibliographyint{int}
+    
+  \item \textbf{\idiom{Presentaciones invitadas en congresos no arbitrados}{Invited talks}}
+    \nociteinv{AIESEC, EXPOASI}
+    \bibliographyinv{inv}
+  \end{cvlist}
+  \setlength{\cvlabelwidth}{\oldcvlabelwidth}
+  % \idiom{}{\selectlanguage{english}}
+  
+  \setlength{\oldcvlabelwidth}{\cvlabelwidth}
+  \setlength{\cvlabelwidth}{1em}
+  \setlength{\cvlabelwidth}{\oldcvlabelwidth}
+  
+  \setlength{\cvlabelwidth}{\oldcvlabelwidth}
+  
+  \medskip
+  
+\end{cv}
+\newpage
+\ifthenelse{\boolean{esp}}{\section*{Apendice} \subsection*{Resumen de tesis doctoral}}
+{\section*{APPENDIX} \subsection*{PhD thesis abstract}}
+
+\idiom{Por mucho tiempo, las tecnologías de información y comunicaciones (TICs) han sido posicionadas como la revolución industrial de esta generación; un salto en productividad mayúsculo capaz de traer una nueva era de prosperidad al mundo. Pero como en toda revolución, hay grandes segmentos que son excluidos y pueden convertirse en los pobres del mañana. Esta investigación se enfoca en las microenpresas en países en vía de desarrollo como uno de estos grupos.
+
+Gracias a su potencial, las TICs han recibido un tratamiento de remedio milagroso capaz de resolver problemas complejos del sector microempresarial como la informalidad, la falta de acceso al mercado crediticio, la falta de capital humano, los bajos niveles de productividad, o la vulnerabilidad. Esto ha creado una visión sesgada en donde la adopción de TICs se está convirtiendo más en un fin que en un medio, y en donde los no-usuarios se ven como actores incapaces o irracionales. Addicionalmente, las TIC son usualmente simplificadas a artefactos y los procesos de adopción son reducidos a variables binarias de adoptantes vs no adoptantes, algo que esconde la verdadera complejidad del proceso.
+
+Esta tesis aborda este problema al posicionar los procesos de adopción de TIC en las microempresas de los países en desarrollo como parte de un proceso más amplio de transiciones digitales utilizando una teoría de perspectiva multinivel (MLP). Sin embargo, dada su naturaleza eurocéntrica y su enfoque en novedades radicales, esta teoría se adaptó a las realidades de las transiciones digitales en contextos con baja capacidad para producir innovaciones radicales o nuevas en el mundo. En particular, la MLP se amplía para incluir transiciones digitales basadas en tecnologías externas. Esta MLP ampliada se utiliza para realizar un estudio cualitativo de tres casos de transiciones digitales en Colombia en los que las microempresas son las adoptantes de las TIC en cuestión.
+
+Siguiendo la  naturaleza sistémica de la MLP, estos casos de estudio se hicieron tomando como unidad de análisis un sector o industria en lugar de las unidades de análisis al nivel de firma que tradicionalmente se encuentran en estudios de adopción de TICs. Al hacer esto, esta investigación encuentra una serie de roles, procesos, y relaciones que tienen una gran influencia en los procesos de adopción de TICs y presentan un entendimiento más amplio del proceso. En particular, encuentra que la no adopción o la adopción tardía de TICs no es tan irracional como se ha presentado en la literatura, y questiona el discurso de las TICs como inherentemente capaces de generar desarrollo social. También muestra que la adopción de TICs sólo ocurre si se acompaña de una serie de procesos “offiline” que son capturados y explicados por la MLP.
+
+Esta tesis hace contribuciones en tres áreas. Primero, hace una contribución teórica al expandir la MLP y explorar su uso en contextos con baja capacidad de innovación radical en donde las transiciones socio-técnicas se basan en tecnologías maduras pero externas en lugar de en nichos radicales locales. Segundo, aporta un entendimiento más amplio del proceso de adopción de TICs y de los factores sistémicos que le dan forma a este proceso. Finalmente, y basándose en este entendimiento sistémico, abre la puerta al diseño de instrumentos de política pública TIC basado en evidencia concreta para fomentar la adopción de TICs en microempresas usando literature socio-técnica como los marcos conceptuales de Strategic Niche Management o Transition Management.}
+{ICTs have long been framed as this generation's industrial revolution; a major leap in productivity with the promise of bringing a new era of prosperity to the world. But as in any revolution, there are major segments that are excluded and could end up becoming tomorrow’s poor. This research focuses on microenterprises in developing countries as one of such groups.
+
+Because of their potential, ICTs have received a silver-bullet treatment by governments, multilateral institutions, donors, and even the academia, capable of solving complex issues of the microenterprise sector like informality, difficult access to finance, lack of skilled human resources, low levels of productivity, vulnerability, etc. This has created a tunnel vision in which the adoption of ICTs is becoming more an end than a mean, and non-adopters are portrait as incapable or irrational actors. Additionally, ICTs are usually black-boxed and adoption process is reduced to a binary variable of adopters vs. non-adopters thus hiding the true complexity of the adoption process.
+
+This thesis addresses this issue by positioning ICT adoption processes in microenterprises in developing nations as part of a wider process of digital transitions using the Multi-Level Perspective theory (MLP). However, given its euro-centric nature and its focus on radical novelties, this theory was adapted to the realities of digital transitions in contexts with low capacities to produce radical or new-in-the-world innovation (non-leading contexts). In particular, the MLP is extended to include digital transitions based on foreign technologies. This expanded MLP is used to conduct a qualitative study of three cases of digital transitions in Colombia in which microenterprises are the adopters of the ICTs in question.
+
+Following the systemic nature of the MLP, these three case studies are done at the industry or market level instead of the traditional firm level studies on ICT adoption. By doing so, this research finds a series of roles, processes, and relationship that have great influence on the ICT adoption process and presents a broader understanding of the process. In particular, it finds that non-adoption or late adoption of ICTs is not as irrational as it has been portrayed, and questions the discourse of ICTs as inherently capable of generating development outcomes. It also shows that ICT adoption only occur if it is accompanied by a series of offline processes that are captured by the MLP.
+
+This thesis makes contributions in three areas. First, a conceptual contribution is made by expanding the MLP and exploring its use in non-leading context were socio-technical transitions are based on foreign and mature technologies instead of local radical niches. Second, it contributes a wider understanding of the ICT adoption process and the systemic forces that shape this process. Finally, based on this systemic understanding, it opens the door to public policy efforts aimed at evidence-based ICT policy for ICT adoption in microenterprises using Socio-Technical literature like the Strategic Niche Management or Transition Management frameworks.}
+
+\end{document}
+
