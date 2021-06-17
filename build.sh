@@ -36,6 +36,7 @@ bibtex int
 bibtex inv
 bibtex jou
 bibtex bok
+bibtex wor
 pdflatex CV.tex -interaction nonstopmode
 pdflatex CV.tex -interaction errorstopmode
 #

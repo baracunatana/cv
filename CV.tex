@@ -29,6 +29,7 @@
 \newcites{jou}{foo}
 \newcites{inv}{foo}
 \newcites{bok}{foo}
+\newcites{wor}{foo}
 
 % Better for lists with 1-2 items and short descriptions
 \newenvironment{sublist}{%
@@ -54,6 +55,7 @@
 \bibliographystylejou{ieeetr}
 \bibliographystyleinv{ieeetr}
 \bibliographystylebok{ieeetr}
+\bibliographystylewor{ieeetr}
 
 \newcommand{\idiom}[2]{\ifthenelse{\boolean{esp}}{#1}{#2}}
 \newcommand{\uniandes}{Universidad de los Andes}
@@ -158,17 +160,17 @@
       \item ISIS-1404: \idiom{TI en las Organizaciones}{IT in Organizations} [\href{http://sistemas.uniandes.edu.co/~isis1404}{\idiom{Sitio web del curso}{Course website}}].
       \end{subbulletlist}}{}
 
-    \item[2014 - 2016] \textit{Teaching Assistant}\\
-      Global Development Institute\\
-      School of Environment, Education and Development\\
-      University of Manchester\\
-      \idiom{Mánchester, Reino Unido}{Manchester, UK}
-      \ifthenelse{\boolean{doCursos}}{
-        \begin{subbulletlist}
-        \item \idiom{Asesor de cuatro tesis de maestría}{Supervisor of four master dissertations}
-        \item \idiom{Desarrollador de los sitios web BlackBoard de los programas de maestr\'{i}a a distancia del Global Development Institute}{Developer of the distance learning BlackBoard sites for the distance learning master courses of the Global Development Institute} 
-        \item \idiom{Miembre del comité organizador de la Conferencia SEED PGR de 2015}{Member of the organizing committee of the SEED PGR 2015 conference}.
-        \end{subbulletlist}}{}
+  \item[2014 - 2016] \textit{Teaching Assistant}\\
+    Global Development Institute\\
+    School of Environment, Education and Development\\
+    University of Manchester\\
+    \idiom{Mánchester, Reino Unido}{Manchester, UK}
+    \ifthenelse{\boolean{doCursos}}{
+      \begin{subbulletlist}
+      \item \idiom{Asesor de cuatro tesis de maestría}{Supervisor of four master dissertations}
+      \item \idiom{Desarrollador de los sitios web BlackBoard de los programas de maestr\'{i}a a distancia del Global Development Institute}{Developer of the distance learning BlackBoard sites for the distance learning master courses of the Global Development Institute} 
+      \item \idiom{Miembre del comité organizador de la Conferencia SEED PGR de 2015}{Member of the organizing committee of the SEED PGR 2015 conference}.
+      \end{subbulletlist}}{}
 
   \item[2009 - 2011] \textit{Instructor \idiom{}{(Junior faculty)}}\\
     \idiom{Facultad de Ingeniería}{Engineering School}\\
@@ -196,7 +198,7 @@
       \item ISIS-1204: \idiom{Algorítmica y Programación Orientada por Objetos}{Algorithmics and Object Oriented Programing} I [\href{http://cupi2.uniandes.edu.co/sitio/index.php/cursos/apo1}{\idiom{Sitio web del curso}{Course website}}]
       \item ISIS-1205: \idiom{Algorítmica y Programación Orientada por Objetos}{Algorithmics and Object Oriented Programing} II [\href{http://cupi2.uniandes.edu.co/sitio/index.php/cursos/apo2}{\idiom{Sitio web del curso}{Course website}}]
       \end{subbulletlist}}{}
-    \end{cvlist}
+  \end{cvlist}
 
   %% 
   %% Experiencia como investigador
@@ -204,6 +206,7 @@
   \begin{cvlist}{\idiom{Otras experiencias relevantes}{Research and professional experience}}
   \item \textbf{\idiom{Revisor académico externo}{Academic reviewer}}
     \begin{subbulletlist}
+    \item \href{https://www.emeraldgrouppublishing.com/journal/ijwis}{International Journal of Web Information Systems}
     \item \href{https://2019ifipwg94.net/}{The 15th International Conference on Social Implications of Computers in Developing Countries}
     \item \href{http://paradigma.uniandes.edu.co/}{Revista Paradigma.}
     \item \href{http://www.unicauca.edu.co/editorial/}{Editorial Universidad del Cauca.}
@@ -236,7 +239,7 @@
       \item \textit{\href{http://cec.uniandes.edu.co}{\idiom{Centro de Competitividad y Estrategia}{Competitiveness and Strategy Center}}}\\
         \idiom{Trabajé 2 meses apoyando el diseño del plan estratégico de TI para uno de los clientes
           del Centro de Competitividad y Estrategia de la Facultad de Administración de Empresas
-          de la Universidad de los Andes}{I work 2 months supporting the design of the strategic plan of IT for one of the clients of the Competitiveness and Strategy Center of the Business School of the University of the Andes}.
+          de la Universidad de los Andes}{I worked 2 months supporting the design of the strategic plan of IT for one of the clients of the Competitiveness and Strategy Center of the Business School of the University of the Andes}.
       \item \textit{\idiom{Departamento de Antropología}{Anthropology Department}}\\
         \idiom{Apoyé al Departamento de Antropología en la actualización tecnológica de un sistema
           de información acerca de lenguas aborigenes}{I supported the Anthropology Department of the University of the Andes in the modernization of an information system about aboriginal languages}.
@@ -356,6 +359,10 @@
   \item \textbf{\idiom{Revistas académicas y journals arbitrados}{Peer-reviewed journals}}
     \nocitejou{Arenas2020, ZEUSS, GENESIS, Arenas2020, Heeks2021, Gomez-Morantes2021, RamosMarroquin2021}
     \bibliographyjou{jou}
+
+  \item \textbf{Working papers}
+    \nocitewor{Heeks2020}
+    \bibliographywor{wor}
 
   \item \textbf{\idiom{Capítulos de libro}{Book Chapters}}
     \nocitebok{IFIP, GobTIOC, CENTERIS}
