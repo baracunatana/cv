@@ -8,10 +8,6 @@ do
 	then
 		LENG="eng"
 	fi
-	if [ "$p" = "-dri" ];
-	then
-		RI="dri"
-	fi
 done
 echo "\newboolean{esp}" > flags.tex
 if [ "$LENG" = "esp" ];
