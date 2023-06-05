@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Construir el archivo de flags de acuerdo a los parametrose
 LENG="esp";
 RI="nri";
