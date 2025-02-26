@@ -25,6 +25,8 @@
 \setboolean{doOtrosIntereses}{false}
 \newboolean{doCursos}
 \setboolean{doCursos}{true}
+\newboolean{doOtrasResponsabilidades}
+\setboolean{doOtrasResponsabilidades}{true}
 
 \newcites{int}{foo}
 \newcites{jou}{foo}
@@ -109,6 +111,9 @@
   %% Formación complementaria
   %% 
   \begin{cvlist}{\idiom{Formación complementaria}{Short courses}}
+  \item[2024] \emph{\idiom{Gestión de Proyectos de Investigación}{Research Project Management}}\\
+    Pontificia Universidad Javeriana\\
+    Bogotá, Colombia
   \item[2018] \emph{\idiom{Consultoría desde la educación}{Consulting services from education}}\\
     Pontificia Universidad Javeriana\\
     Bogotá, Colombia
@@ -124,24 +129,56 @@
   \end{cvlist}
   
   \begin{cvlist}{\idiom{Certificaciones}{Certifications}}
-    \item TOGAF 9 Certified
+	\item[2024] \href{https://www.citiprogram.org/verify/?w6feb01a8-33b9-4bb8-a286-845f4178743e-61531570}{Technology, Ethics, and Regulations}. Collaborative Institutional Training Initiative (CITI)
+	\item[2024] \href{https://www.citiprogram.org/verify/?w7b89bec5-f4a3-44ad-b27d-73a24977af6a-61531564}{Conflicts of Interest}. Collaborative Institutional Training Initiative (CITI)
+	\item[2024] \href{https://www.citiprogram.org/verify/?wf608e8b9-ad03-4641-a072-b75ba2af5f7a-61531565}{Responsible Conduct of Research for Engineers}. Collaborative Institutional Training Initiative (CITI)
+	\item[2018] \href{https://www.youracclaim.com/badges/8b7f4667-dcd7-422b-9761-53e6d6b30df3/linked_in_profile}{TOGAF 9 Certified}. The Open Group
   \end{cvlist}
 
   %% 
-  %% Experiencia docente
+  %% Experiencia académica 
   %% 
-  \begin{cvlist}{\idiom{Experiencia Docente}{Teaching Experience}}
-  \item[2018 - ] \textit{\idiom{Profesor asistente }{Assistant professor}}\\
+  \begin{cvlist}{\idiom{Experiencia Académica}{Academic Experience}}
+  \item[2024 - ] \textit{\idiom{Profesor asociado }{Associate professor}}\\
     \idiom{Facultad de Ingeniería}{Engineering School}\\
     \idiom{Departamento de}{} \isist \idiom{}{ Department}\\
     Pontificia Universidad Javeriana\\
-    Bogotá, Colombia
+    Bogotá, Colombia \newline \newline
     \ifthenelse{\boolean{doCursos}}{
+      \textit{\idiom{Cursos a cargo}{Courses}}:
+      \begin{subbulletlist}
+      \item \idiom{Sistemas de Información}{Information Systems}
+      \item \idiom{Pensamiento Sistémico}{Systemic Thinking}
+      \item \idiom{Proyecto de Innovación y Emprendimiento}{Innovation and Entrepreneurship Proyect}
+      \end{subbulletlist}}{}
+    \ifthenelse{\boolean{doOtrasResponsabilidades}}{
+      \textit{\idiom{Otras responsabilidades}{Other responsabilities}}:
+      \begin{subbulletlist}
+      \item (2024-) \idiom{Director de la Especialización en Gerencia de Proyectos de TI}{Director of the Specialization In Management Of Information Technology Projects}
+      \item (2024-) \idiom{Director de la Especialización en Arquitectura empresarial de software}{Director of the Specialization In Enterprise Software Architecture}
+      \item (2024-) \idiom{Miembro del Consejo de Facultad para la Facultad de Ingeniería}{Member of the Faculty Counsil of the Engineering Faculty}
+      \item (2024-) \idiom{Consejero estudiantil}{Student counsel}
+    \end{subbulletlist}}{}
+
+  \item[2018 - 2024] \textit{\idiom{Profesor asistente }{Assistant professor}}\\
+    \idiom{Facultad de Ingeniería}{Engineering School}\\
+    \idiom{Departamento de}{} \isist \idiom{}{ Department}\\
+    Pontificia Universidad Javeriana\\
+    Bogotá, Colombia \newline  \newline
+    \ifthenelse{\boolean{doCursos}}{
+      \textit{\idiom{Cursos a cargo}{Courses}}:
       \begin{subbulletlist}
       \item \idiom{Sistemas de Información}{Information Systems}
       \item \idiom{Pensamiento Sistémico}{Systemic Thinking}
       \item \idiom{Arquitectura Empresarial (posgrado)}{Enterprise Architecture}
-      \end{subbulletlist}}{}
+    \end{subbulletlist}}{}
+    \ifthenelse{\boolean{doOtrasResponsabilidades}}{
+      \textit{\idiom{Otras responsabilidades}{Other responsabilities}}:
+      \begin{subbulletlist}
+      \item (2023-2024) \idiom{Jefatura de sección de ingeniería de software: Coordinación académica de los cursos asociados con el tema de ingeniería de software}{Section coordinator of software engineering (2023-2024): Academic coordination of the courses related to software engineering}
+      \item (2023-2024) \idiom{Miembro del comité de carrera para el programa de Ingeniería de Sistemas}{Member of the program committee for the Systems Engineering program}
+      \item (2022-2024) \idiom{Consejero estudiantil}{Student counsel}
+    \end{subbulletlist}}{}
 
   \item[2017 - 2019] \textit{MSc dissertation supervisor}\\
     Centre for Development Informatics\\
@@ -203,6 +240,35 @@
       \item ISIS-1205: \idiom{Algorítmica y Programación Orientada por Objetos}{Algorithmics and Object Oriented Programing} II [\href{http://cupi2.uniandes.edu.co/sitio/index.php/cursos/apo2}{\idiom{Sitio web del curso}{Course website}}]
       \end{subbulletlist}}{}
   \end{cvlist}
+
+  \begin{cvlist}{\idiom{Proyectos de investigación financiados}{Funded research projects}}
+
+  \item[2025-2026] \textbf{\idiom{Caminos para la paz y la memoria "Tywa Khe": muros que tejen historias}{Paths for Peace and Memory “Tywa Khe”: Walls That Weave Stories}}\\
+    \idiom{Este proyecto propone transformar los espacios públicos de los barrios altos de Usme (Bogotá) en un museo al aire libre, fusionando arte y tecnología para rescatar la memoria colectiva. El proyecto se centra en la co-creación de cinco murales históricos, desarrollados conjuntamente por artistas locales, estudiantes y la comunidad, en los que se integran herramientas digitales. Cada mural contará con códigos QR que dirigirán a una plataforma tecnológica interactiva, donde los visitantes podrán acceder a contenido multimedia como videos, entrevistas y documentos que profundizan en las historias y luchas comunitarias. Además, se diseñará la Ruta de la Memoria, un recorrido físico y digital que conecta los murales con otros sitios significativos, facilitando una experiencia enriquecida y promoviendo el turismo comunitario.}{This project aims to transform the public spaces of Usme’s (Bogotá) high neighborhoods into an open-air museum by merging art and technology to rescue collective memory. It focuses on the co-creation of five historical murals, developed jointly by local artists, students, and the community, with digital tools integrated into each piece. Every mural will feature QR codes linking to an interactive digital platform where visitors can access multimedia content such as videos, interviews, and documents that explore the community’s stories and struggles. Additionally, the project includes the design of the Memory Route, a physical and digital pathway that connects the murals with other significant sites, offering an enriched experience and promoting community tourism.}
+    \begin{subbulletlist}
+    \item \idiom{Entidad financiadora}{Funder}: Pontificia Universidad Javeriana. Bogotá, Colombia
+    \item \idiom{Financiación otorgada}{Funds allocated}: \idiom{20 millones de pesos}{200 million Colombian pesos}
+    \item \idiom{Rol}{Role}: \idiom{Investigador principal}{Principal investigator} \\
+    \end{subbulletlist}
+
+  \item[2024-2026] \textbf{\idiom{Framework de gestión del conocimiento comunitario sobre gestión de residuos sólidos orgánicos soportado por tecnologías 4.0}{Community Knowledge Management Framework on Organic Solid Waste Management Supported by 4.0 Technologies}}\\
+    \idiom{El proyecto propone impulsar la separación y transformación de residuos orgánicos mediante compostaje y lombricultura, apoyados en un modelo de gestión del conocimiento comunitario y tecnologías 4.0, para fortalecer la agricultura urbana y empoderar a comunidades de bajos recursos en la localidad de Usme (Bogotá), mitigando así la dependencia del relleno sanitario y promoviendo la sostenibilidad ambiental y social.}{The project aims to incentivize the separation and transformation of organic waste through composting and vermiculture, supported by a community knowledge management model and 4.0 technologies, to strengthen urban agriculture and empower low-income communities in the Usme locality (Bogotá), thus mitigating dependence on landfills and promoting environmental and social sustainability.}
+    \begin{subbulletlist}
+    \item \idiom{Entidad financiadora}{Funder}: Pontificia Universidad Javeriana. Bogotá, Colombia
+    \item \idiom{Financiación otorgada}{Funds allocated}: \idiom{200 millones de pesos}{200 million Colombian pesos}
+    \item \idiom{Rol}{Role}: \idiom{Co-investigador}{Co-investigator} \\
+    \end{subbulletlist}
+
+  \item[2024] \textbf{\idiom{Plataforma digital para apoyar la rehabilitación de sobrevivientes después de un ataque cerebrovascular (ACV)}{Digital platform to support the rehabilitation of stroke (CVA) survivors}}\\
+\idiom{Este proyecto propone construir es una plataforma digital para la comunidad de sobrevivientes de ACV, sus grupos de apoyo y terapeutas, que les permita acceder con facilidad a recursos para rehabilitación y contribuya a la construcción y fortalecimiento de comunidades. Esta plataforma estará disponible a través de la web tanto para miembros conocidos de la comunidad, que ya hagan parte de asociaciones de pacientes, como para el público en general que esté interesado en el tema, y estará enteramente en español para que sea de utilidad para todo el público latinoamericano.}{This project proposes to build a digital platform for the community of stroke survivors, their support groups, and therapists, enabling them to easily access rehabilitation resources and contributing to the development and strengthening of communities. This platform will be available online to both recognized members of the community-—those who are already part of patient associations-—as well as to the general public interested in this topic. It will be entirely in Spanish so that it can serve the entire Latin American audience effectively.}\\
+    \begin{subbulletlist}
+    \item \idiom{Entidad financiadora}{Funder}: \idiom{Universidad de los Andes y Pontificia Universidad Javeriana. Bogotá, Colombia}{Universidad de los Andes and Pontificia Universidad Javeriana. Bogotá, Colombia}
+    \item \idiom{Financiación otorgada}{Funds allocated}: \idiom{60 millones de pesos}{60 million Colombian pesos}
+    \item \idiom{Rol}{Role}: \idiom{Co-investigador}{Co-investigator} \\
+    \end{subbulletlist}
+  \end{cvlist}
+
+
   %% 
   %% Experiencia como investigador
   %% 
@@ -221,6 +287,7 @@
   \begin{cvlist}{\idiom{Otras experiencias relevantes}{Research and professional experience}}
   \item \textbf{\idiom{Revisor académico externo}{Academic reviewer}}
     \begin{subbulletlist}
+    \item \href{https://journals.sagepub.com/home/dhj}{Digital Health}
     \item \href{https://amcis2023.aisconferences.org/}{Americas Conference on Information Systems (AMCIS) 2023}
     \item \href{http://15ccc.sco2.org/index_eng.html}{15vo Congreso Colombiano de Computación (2021)}
     \item \href{https://clei2021.cr/simplatisd}{Simposio Latinoamericano de Informática y Sociedad 2021}
@@ -327,14 +394,18 @@
   %% 
   %% Premios
   %% 
-  \begin{cvlist}{\idiom{Premios, becas, y subvensiones}{Awards, Fellowships, and Grants}}
-  \item \idiom{Beca Colciencias. Crédito condonable para doctorado en el exterior (convocatoria 568 de 2012)}{Colciencias scholarship. Condonalbe loan for PhD studies abroad (Call 568 of 2012)}.
+  \begin{cvlist}{\idiom{Premios, Becas, y Subvenciones de Investigación}{Awards, Fellowships, and Research Grants}}
+  \item[2023] \textbf{\idiom{Convocatoria Co-creando Soluciones con la Comunidad}{Co-creando Soluciones con la Comunidad Call for Grants}}\\
+  \item[2012] \textbf{\idiom{Beca para Estudios Doctorales}{Doctoral Studies Grant}}\\
+\idiom{Beca Colciencias. Crédito condonable para doctorado en el exterior (convocatoria 568 de 2012)}{Colciencias scholarship. Condonabel loan for PhD studies abroad (Call 568 of 2012)}.
   \end{cvlist}
   
   \begin{cvlist}{\idiom{Estudiantes dirigidos}{Students}}
   \item \textbf{\idiom{Estudiantes de Maestría}{MSc Students}}
     \begin{subbulletlist}
-    \item Edward Andrés Cortés, Pablo Miguel Núñez, y Sara Isabela Vergara ``Sistema de Recomendación Piloto para Programación de Clases del Departamento de Ingeniería de Sistemas en la Pontificia Universidad Javeriana'', Pontificia Universidad Javeriana, Bogotá, Colombia, 2021.
+    \item Juan Sebastián Barreto Mora, Mauricio Fernando Ortiz Salinas, \idiom{y}{and} Elkin Darío Sánchez Pulido ``Framework de elaboración y evaluación de arquitectura empresarial para el cumplimiento de política de Gobierno Digital en Colombia'', Pontificia Universidad Javeriana, Bogotá, Colombia, 2024.
+    \item Ana Carolina López Rodríguez ``Predicción del riesgo crediticio con impacto sostenible'', Pontificia Universidad Javeriana, Bogotá, Colombia, 2023.
+    \item Edward Andrés Cortés, Pablo Miguel Núñez, \idiom{y}{and} Sara Isabela Vergara ``Sistema de Recomendación Piloto para Programación de Clases del Departamento de Ingeniería de Sistemas en la Pontificia Universidad Javeriana'', Pontificia Universidad Javeriana, Bogotá, Colombia, 2021.
     \item Lyndalin Emekwa ``SaaS as a Business Model: An Analysis of the migration from offering on-premise software solutions to cloud-based software solutions by Sage Group UK'', University of Manchester, UK., 2020.
     \item Tenesha Hutchison ``Towards One Patient One Record Health Information System in Saint Lucia: Challenges to Sustainability and Scalability'', University of Manchester, UK., 2020.
     \item Esteban Villafrades ``Evaluación de impacto de herramientas digitales de aprendizaje: el caso de SPAL web'', Pontificia Universidad Javeriana, Bogotá, Colombia, 2019.
@@ -350,6 +421,7 @@
     \end{subbulletlist}
   \item \textbf{\idiom{Estudiantes de Pregrado}{Undergrad Students}}
     \begin{subbulletlist}
+    \item Laura Sofía Rozo Rodríguez, Maria Alejandra Suárez Reyes, David Alejandro Sequera Lievano, \idiom{y}{and} Martín Chafloque Mesía, ``Plataforma Integral de Apoyo Emocional e Información para pacientes con Cáncer de Mama''. Pontificia Universidad Javeriana, Bogotá, Colombia. 2023.
     \item Andrés Alberto Gomes, Felipe Jiménez, Ana Cristina Macià, Camilo Andrés Mogollón, \idiom{y}{and} Juan Pablo Suárez, ``Sistema para la empresa Cristales Templado La Torre''. Pontificia Universidad Javeriana, Bogotá, Colombia. 2018.
     \item Diego Felipe Velasco, ``Comercio electrónico en MIPYMES colombianas''. Universidad de los Andes, Bogotá, Colombia, 2011.
     \item José Alejandro Rodrígue, ``Diagnostico de TICs en Pymes colombiana''. Universidad de los Andes, Bogotá, Colombia, 2011.
@@ -377,8 +449,8 @@
     \nocitejou{Njuba2024, Heeks2021, Gomez-Morantes2021, RamosMarroquin2021, Arenas2020, ZEUSS, GENESIS, Arenas2020}
     \bibliographyjou{jou}
 
-  \item \textbf{Working papers}
-    \nocitewor{Heeks2020}
+  \item \textbf{\idiom{Documentos de trabajo y \textit{preprints}}{Working papers and preprints}}
+    \nocitewor{Njuba2024a, Heeks2020}
     \bibliographywor{wor}
 
   \item \textbf{\idiom{Capítulos de libro}{Book Chapters}}
@@ -386,7 +458,7 @@
     \bibliographybok{bok}
     
   \item \textbf{\idiom{Congresos y conferencias internacionales arbitradas}{Peer-reviewed international conferences}}
-    \nociteint{Adacop, REALTEETH, WEBIST, GobTIO, CSEDU, CONFIRM, CONTECSI,XML}
+    \nociteint{Herrera2024, Adacop, REALTEETH, WEBIST, GobTIO, CSEDU, CONFIRM, CONTECSI,XML}
     \bibliographyint{int}
     
   \item \textbf{\idiom{Presentaciones invitadas en congresos no arbitrados}{Invited talks}}
